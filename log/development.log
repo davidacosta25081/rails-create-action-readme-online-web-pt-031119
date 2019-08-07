@@ -62,3 +62,24 @@ Completed 204 No Content in 14ms (ActiveRecord: 3.0ms)
 
 
   [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/posts/new" for 104.162.182.37 at 2019-08-07 16:33:44 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 244ms (Views: 231.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/posts" for 104.162.182.37 at 2019-08-07 16:33:58 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6zusNacp1/m//cwUn+lc4viIqSDkuVsphxtY4SlB76GedAR1XL4uUDEG7LNdywqOGqbIHdZRxPFgzM0OaeVpQg==", "title"=>"New Post", "description"=>"Posteado", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "New Post"], ["description", "Posteado"], ["created_at", "2019-08-07 16:33:58.458776"], ["updated_at", "2019-08-07 16:33:58.458776"]]
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 6.5ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"posts", :id=>nil} missing required keys: [:id]):
+  
+app/controllers/posts_controller.rb:19:in `create'
