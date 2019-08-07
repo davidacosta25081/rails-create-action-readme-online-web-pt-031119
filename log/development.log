@@ -149,3 +149,18 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.2ms)
 
 
+Started POST "/posts" for 104.162.182.37 at 2019-08-07 16:50:46 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6zusNacp1/m//cwUn+lc4viIqSDkuVsphxtY4SlB76GedAR1XL4uUDEG7LNdywqOGqbIHdZRxPFgzM0OaeVpQg==", "title"=>"New Post44", "description"=>"Posteado2", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "New Post44"], ["description", "Posteado2"], ["created_at", "2019-08-07 16:50:46.552394"], ["updated_at", "2019-08-07 16:50:46.552394"]]
+  [1m[35m (75.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://142.93.11.41:38532/posts
+Completed 302 Found in 81ms (ActiveRecord: 76.4ms)
+
+
+Started GET "/posts" for 104.162.182.37 at 2019-08-07 16:50:46 +0000
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.6ms)
