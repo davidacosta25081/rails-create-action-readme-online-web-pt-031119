@@ -122,3 +122,12 @@ Redirected to http://142.93.11.41:38532/posts/6
 Completed 302 Found in 11ms (ActiveRecord: 4.5ms)
 
 
+Started GET "/posts/6" for 104.162.182.37 at 2019-08-07 16:49:29 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 12ms (Views: 8.7ms | ActiveRecord: 0.2ms)
+
+
